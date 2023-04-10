@@ -29,19 +29,26 @@ function Card ({data}) {
 }
 
 function CardsContainer ({datas}) {
+    const rows= []
+    let lastCard = null
 
-    return datas.forEach(data => {
-        <Card key={data.title} data={data}/>
+    datas.forEach(data => {
+        rows.push(<Card key={data.title} data={data}/>)
     })
 }
 
-function Main () {
+class Main extends React.component {
 
-    return <React.Fragment>
-        <h1 className="title text-3xl mb-10">Book a hotel today</h1>
-        <div className="mx-auto grid gap-y-10 md:grid-cols-3 md:gap-12 md:gap-y-14 lg:grid-cols-4">
-        </div>
-    </React.Fragment>
+    render () {
+        return <React.Fragment>
+             <main class="container max-w-[85%] md:max-w-[90%] p-5 mx-auto">
+             <h1 class="title text-3xl mb-10">Book a hotel today</h1>
+             <div class="mx-auto grid gap-y-10 md:grid-cols-3 md:gap-12 md:gap-y-14 lg:grid-cols-4">
+
+             </div>
+             </main>
+        </React.Fragment>
+    }
 }
 
 
